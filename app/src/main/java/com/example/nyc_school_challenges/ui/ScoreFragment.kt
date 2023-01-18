@@ -19,7 +19,6 @@ class ScoreFragment : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(DialogFragment.STYLE_NORMAL,
-            //android.R.style.Theme_Material_Light_NoActionBar_Fullscreen);
             android.R.style.Theme_Material_Light_NoActionBar_Fullscreen)
 
     }
@@ -76,10 +75,6 @@ class ScoreFragment : DialogFragment() {
             intent.data = website
             startActivity(intent)
         }
-        binding.close.setOnClickListener {
-            dismiss()
-        }
-
 
     }
 

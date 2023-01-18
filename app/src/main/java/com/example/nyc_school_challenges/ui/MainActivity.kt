@@ -1,6 +1,5 @@
 package com.example.nyc_school_challenges.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity

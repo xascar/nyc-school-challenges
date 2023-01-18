@@ -6,28 +6,20 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoLink="all"
-        android:linksClickable="true"
-        android:text="@string/close"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/light_blue"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/RecyclerViewBackground"
+    >
 
     <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/close"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
 
 
 
@@ -137,29 +129,22 @@
                 android:linksClickable="true" />
         </LinearLayout>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/black"
-                android:text="@string/sat_scores"
-                android:textStyle="bold"
-                android:linksClickable="true" />
-
-
+            android:layout_margin="16dp"
+            >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient"
+                android:padding="16dp"
+                >
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:textColor="@color/secondaryDarkColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
@@ -170,7 +155,7 @@
 
                 <TextView
                     android:id="@+id/math_score"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryTextColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
@@ -179,111 +164,77 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
-                />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
                 <TextView
-                    android:textColor="@color/black"
+                    android:textColor="@color/secondaryDarkColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/critical_reading"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/math_score"
+                    />
 
                 <TextView
                     android:id="@+id/critical_reading_score"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryTextColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="@string/full_score"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray" />
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                    app:layout_constraintTop_toBottomOf="@id/math_score"
+                    />
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:textColor="@color/secondaryDarkColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/writing"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@+id/critical_reading_score"
+                    />
 
                 <TextView
                     android:id="@+id/writing_score"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryTextColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="@string/full_score"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/critical_reading_score"/>
 
-                />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <TextView
-                    android:textColor="@color/black"
+                    android:textColor="@color/secondaryDarkColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/num_task_taker"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@+id/writing_score"/>
 
                 <TextView
                     android:id="@+id/num_task_taker"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primaryTextColor"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:autoLink="all"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="@string/full_score"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/writing_score"/>
 
-                />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
 
     </LinearLayout>

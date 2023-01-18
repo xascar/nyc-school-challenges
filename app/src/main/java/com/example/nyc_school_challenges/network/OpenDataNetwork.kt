@@ -1,5 +1,6 @@
 package com.example.nyc_school_challenges.network
 
+import com.example.nyc_school_challenges.util.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +19,7 @@ object OpenDataNetwork {
     @Provides
     fun providesRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://data.cityofnewyork.us/resource/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

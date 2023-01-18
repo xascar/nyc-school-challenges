@@ -7,18 +7,9 @@ data class SchoolModel(
     val school: HighSchoolResponse?= null,
     val satScores: SATScoreResponse?= null
 ){
-    val dbn: String? = school?.dbn
     val schoolName: String = "${school?.schoolName} (${school?.dbn})"
-    val detailsSummary: String get() {
-        val gradesRange = school?.finalgrades?.split("-")
-        return if (gradesRange?.size == 2) {
-            "${gradesRange[0]} to ${gradesRange[1]}"
-        } else {
-            school?.finalgrades ?: ""
-        }
-    }
+
     val addressString: String get() = "${school?.primaryAddressLine1}, ${school?.city}, ${school?.stateCode}, ${school?.zip}"
-    val overviewParagraph  = school?.overviewParagraph
     val website = school?.website
 
     val webSiteUrl: Uri
