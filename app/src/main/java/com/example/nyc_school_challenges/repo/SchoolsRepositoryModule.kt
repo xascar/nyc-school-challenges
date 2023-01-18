@@ -1,6 +1,6 @@
 package com.example.nyc_school_challenges.repo
 
-import com.example.nyc_school_challenges.network.NYCOpenDataAPI
+import com.example.nyc_school_challenges.network.OpenDataAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,7 +10,7 @@ import dagger.hilt.android.components.ViewModelComponent
 @Module
 object SchoolsRepositoryModule {
     @Provides
-    fun providesSchoolsRepository(api: NYCOpenDataAPI): SchoolsRepository {
+    fun providesSchoolsRepository(api: OpenDataAPI): SchoolsRepository {
         return SchoolsRepository(api)
     }
 }

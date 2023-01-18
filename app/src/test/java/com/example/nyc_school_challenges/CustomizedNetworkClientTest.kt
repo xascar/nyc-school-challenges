@@ -20,7 +20,7 @@ class CustomizedNetworkClientTest {
     }
 }
 //
-//class NYCOpenDataAPI(networkClient: NetworkClient = URLSession.shared) {
+//class OpenDataAPI(networkClient: NetworkClient = URLSession.shared) {
 //
 //    private val networkClient: NetworkClient
 //
@@ -28,8 +28,8 @@ class CustomizedNetworkClientTest {
 //        this.networkClient = networkClient
 //    }
 //
-//    suspend fun highSchools(): List<HighSchool> {
-//        fetchAndDecodeData(HighSchool.serializer().list, "s3k6-pzi2")
+//    suspend fun highSchools(): List<HighSchoolResponse> {
+//        fetchAndDecodeData(HighSchoolResponse.serializer().list, "s3k6-pzi2")
 //    }
 //
 //    suspend fun satScores(): List<SATScores> {

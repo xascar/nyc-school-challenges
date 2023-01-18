@@ -1,9 +1,8 @@
-package com.example.nyc_school_challenges.model
+package com.example.nyc_school_challenges.domain
 
 import com.google.gson.annotations.SerializedName
-import com.squareup.moshi.Json
 
-data class HighSchool (
+data class HighSchoolResponse (
 
     @SerializedName("dbn"                              ) var dbn                            : String? = null,
     @SerializedName("school_name"                      ) var schoolName                     : String? = null,

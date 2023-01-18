@@ -1,12 +1,11 @@
-package com.example.nyc_school_challenges.model
+package com.example.nyc_school_challenges.domain
 
 import android.net.Uri
-import java.net.URL
 import java.util.*
 
 data class SchoolModel(
-    val school: HighSchool?= null,
-    val satScores: SATScore?= null
+    val school: HighSchoolResponse?= null,
+    val satScores: SATScoreResponse?= null
 ){
     val dbn: String? = school?.dbn
     val schoolName: String = "${school?.schoolName} (${school?.dbn})"

@@ -1,14 +1,12 @@
 package com.example.nyc_school_challenges
 
-import com.example.nyc_school_challenges.network.NYCOpenDataNetworkModule
+import com.example.nyc_school_challenges.network.OpenDataNetwork
 import com.example.nyc_school_challenges.repo.SchoolsRepositoryModule
 import com.example.nyc_school_challenges.viewmodel.SchoolViewModel
-import junit.framework.Assert
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 
 class ViewModelTest {
@@ -25,15 +23,15 @@ class ViewModelTest {
         try {
             viewModel = SchoolViewModel(
                 SchoolsRepositoryModule.providesSchoolsRepository(
-                    NYCOpenDataNetworkModule.providesNYCOpenDataAPI(
-                        NYCOpenDataNetworkModule.providesRetrofit()
+                    OpenDataNetwork.providesNYCOpenDataAPI(
+                        OpenDataNetwork.providesRetrofit()
                     )
                 )
             )
 
             viewModel.fetchSchools()
             print(viewModel.lState.value)
-            assertEquals( com.example.nyc_school_challenges.model.Result.SUCCESS, viewModel.lState.value?.message)
+            assertEquals( com.example.nyc_school_challenges.domain.Result.SUCCESS, viewModel.lState.value?.message)
 
         } finally {
             Dispatchers.resetMain()
@@ -50,8 +48,8 @@ class ViewModelTest {
         try {
             viewModel = SchoolViewModel(
                 SchoolsRepositoryModule.providesSchoolsRepository(
-                    NYCOpenDataNetworkModule.providesNYCOpenDataAPI(
-                        NYCOpenDataNetworkModule.providesRetrofit()
+                    OpenDataNetwork.providesNYCOpenDataAPI(
+                        OpenDataNetwork.providesRetrofit()
                     )
                 )
             )

@@ -1,13 +1,10 @@
 package com.example.nyc_school_challenges.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.nyc_school_challenges.model.Result
-import com.example.nyc_school_challenges.model.SATScore
-import com.example.nyc_school_challenges.model.SchoolModel
-import com.example.nyc_school_challenges.model.State
+import com.example.nyc_school_challenges.domain.Result
+import com.example.nyc_school_challenges.domain.SchoolModel
+import com.example.nyc_school_challenges.domain.State
 import com.example.nyc_school_challenges.repo.SchoolsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
@@ -20,7 +17,7 @@ import javax.inject.Inject
 class SchoolViewModel @Inject constructor(val repository : SchoolsRepository) : ViewModel() {
     private val mState =  MutableStateFlow<State>(State.Ready())
     private val mSearchResult = MutableStateFlow<List<SchoolModel>>(listOf())
-    private val mCurrentSelection = MutableStateFlow<SchoolModel>(SchoolModel())
+    private val mCurrentSelection = MutableStateFlow(SchoolModel())
     val lState: StateFlow<State>
         get() = mState
     val lSearchResult : StateFlow<List<SchoolModel>>

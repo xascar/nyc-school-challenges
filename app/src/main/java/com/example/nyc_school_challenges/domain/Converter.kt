@@ -1,4 +1,4 @@
-package com.example.nyc_school_challenges.model
+package com.example.nyc_school_challenges.domain
 
 import com.google.gson.annotations.SerializedName
 

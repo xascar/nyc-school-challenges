@@ -1,26 +1,21 @@
 package com.example.nyc_school_challenges.repo
 
 
-import com.example.nyc_school_challenges.model.HighSchool
-import com.example.nyc_school_challenges.model.SATScore
-import com.example.nyc_school_challenges.model.SchoolModel
-import com.example.nyc_school_challenges.model.State
-import com.example.nyc_school_challenges.network.NYCOpenDataAPI
-import com.google.gson.Gson
-import retrofit2.Call
-import retrofit2.Response
-import java.net.URL
+import com.example.nyc_school_challenges.domain.HighSchoolResponse
+import com.example.nyc_school_challenges.domain.SATScoreResponse
+import com.example.nyc_school_challenges.domain.SchoolModel
+import com.example.nyc_school_challenges.network.OpenDataAPI
 
-class SchoolsRepository(private val api: NYCOpenDataAPI) {
+class SchoolsRepository(private val api: OpenDataAPI) {
 
-    private var highSchools: List<HighSchool>? = null
-    private var satScores: List<SATScore>? = null
+    private var highSchools: List<HighSchoolResponse>? = null
+    private var satScores: List<SATScoreResponse>? = null
 
 //    fun getHighSchools(callback : SchoolsCallback){
 //        val url = "s3k6-pzi2.json"
 //        val fetchBody = fetch(url)
 //        try {
-//            highSchools = Gson().fromJson(fetchBody, Array<HighSchool>::class.java).toList()
+//            highSchools = Gson().fromJson(fetchBody, Array<HighSchoolResponse>::class.java).toList()
 //            val result = fetchSchools(highSchools, satScores)
 //            if(!result.isEmpty()){
 //                callback.onSuccess(result)
@@ -42,7 +37,7 @@ class SchoolsRepository(private val api: NYCOpenDataAPI) {
 //        val url = "f9bf-2cp4.json"
 //        val fetchBody = fetch(url)
 //        try {
-//            satScores = Gson().fromJson(fetchBody, Array<SATScore>::class.java).toList()
+//            satScores = Gson().fromJson(fetchBody, Array<SATScoreResponse>::class.java).toList()
 //            val result = fetchSchools(highSchools, satScores)
 //            if(!result.isEmpty()){
 //                callback.onSuccess(result)
@@ -53,9 +48,9 @@ class SchoolsRepository(private val api: NYCOpenDataAPI) {
 //        }
 //    }
 
-    fun fetchSchools(highSchools: List<HighSchool>?, satScores: List<SATScore>?): List<SchoolModel> {
+    fun fetchSchools(highSchools: List<HighSchoolResponse>?, satScores: List<SATScoreResponse>?): List<SchoolModel> {
         if(highSchools == null || satScores == null) return listOf()
-        val schoolsMap = mutableMapOf<String, SATScore>()
+        val schoolsMap = mutableMapOf<String, SATScoreResponse>()
         for (satScore in satScores) {
             schoolsMap[satScore.dbn ?: ""] = satScore
         }

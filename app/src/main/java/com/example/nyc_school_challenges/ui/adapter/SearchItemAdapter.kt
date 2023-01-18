@@ -1,14 +1,12 @@
-package com.example.nyc_school_challenges.adapter
+package com.example.nyc_school_challenges.ui.adapter
 
-import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nyc_school_challenges.ScoreFragment
+import com.example.nyc_school_challenges.ui.ScoreFragment
 import com.example.nyc_school_challenges.databinding.LayoutSearchItemBinding
-import com.example.nyc_school_challenges.model.SchoolModel
+import com.example.nyc_school_challenges.domain.SchoolModel
 import com.example.nyc_school_challenges.viewmodel.SchoolViewModel
 
 class SearchItemAdapter(val activity: AppCompatActivity, val viewModel: SchoolViewModel,  var schools : List<SchoolModel>) : RecyclerView.Adapter<SearchItemAdapter.SearchItemViewHolder>() {

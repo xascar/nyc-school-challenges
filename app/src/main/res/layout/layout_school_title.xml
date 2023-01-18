@@ -38,10 +38,10 @@
             android:id="@+id/school_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/light_blue"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:autoLink="all"
             tools:text="@string/school_address"
+            android:layout_marginStart="8dp"
             android:linksClickable="true" />
         </LinearLayout>
 
@@ -70,10 +70,10 @@
                 android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/light_blue"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:autoLink="all"
                 tools:text="@string/phone"
+                android:layout_marginStart="8dp"
                 android:linksClickable="true" />
         </LinearLayout>
 
@@ -91,10 +91,10 @@
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/light_blue"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:autoLink="all"
                 tools:text="@string/email"
+                android:layout_marginStart="8dp"
                 android:linksClickable="true" />
         </LinearLayout>
 
@@ -111,10 +111,10 @@
                 android:id="@+id/website"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/light_blue"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:autoLink="all"
                 tools:text="@string/website"
+                android:layout_marginStart="8dp"
                 android:linksClickable="true" />
         </LinearLayout>
 

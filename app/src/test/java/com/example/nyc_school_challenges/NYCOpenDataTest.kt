@@ -1,10 +1,8 @@
 package com.example.nyc_school_challenges
 
-import com.example.nyc_school_challenges.model.SchoolModel
-import com.example.nyc_school_challenges.network.NYCOpenDataNetworkModule
+import com.example.nyc_school_challenges.network.OpenDataNetwork
 import com.example.nyc_school_challenges.repo.SchoolsRepository
 import com.example.nyc_school_challenges.repo.SchoolsRepositoryModule
-import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
 
@@ -15,8 +13,8 @@ class NYCOpenDataTest {
     @Before
     fun setUp() {
         repository = SchoolsRepositoryModule.providesSchoolsRepository(
-            NYCOpenDataNetworkModule.providesNYCOpenDataAPI(
-                NYCOpenDataNetworkModule.providesRetrofit()
+            OpenDataNetwork.providesNYCOpenDataAPI(
+                OpenDataNetwork.providesRetrofit()
             )
         )
     }
