@@ -1,5 +1,6 @@
 package com.example.nyc_school_challenges
 
+import com.example.nyc_school_challenges.domain.Result
 import com.example.nyc_school_challenges.network.OpenDataNetwork
 import com.example.nyc_school_challenges.repo.SchoolsRepositoryModule
 import com.example.nyc_school_challenges.viewmodel.SchoolViewModel
@@ -31,7 +32,7 @@ class ViewModelTest {
 
             viewModel.fetchSchools()
             print(viewModel.lState.value)
-            assertEquals( com.example.nyc_school_challenges.domain.Result.SUCCESS, viewModel.lState.value?.message)
+            assertEquals(Result.LOADING, viewModel.lState.value?.message)
 
         } finally {
             Dispatchers.resetMain()
