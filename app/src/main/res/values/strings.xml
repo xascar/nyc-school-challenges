@@ -16,4 +16,7 @@
     <string name="nyc_school_challenges">20230118-OscarMoreno-NYCSchools</string>
     <string name="search">Search</string>
     <string name="close">Close</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="navigate_back">Navigate back</string>
 </resources>

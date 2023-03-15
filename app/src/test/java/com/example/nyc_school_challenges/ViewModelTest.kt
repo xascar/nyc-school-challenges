@@ -3,7 +3,7 @@ package com.example.nyc_school_challenges
 import com.example.nyc_school_challenges.domain.Result
 import com.example.nyc_school_challenges.network.OpenDataNetwork
 import com.example.nyc_school_challenges.repo.SchoolsRepositoryModule
-import com.example.nyc_school_challenges.viewmodel.SchoolViewModel
+import com.example.nyc_school_challenges.ui.home.SchoolViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*

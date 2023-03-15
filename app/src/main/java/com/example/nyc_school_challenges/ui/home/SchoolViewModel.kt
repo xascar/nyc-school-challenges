@@ -1,4 +1,4 @@
-package com.example.nyc_school_challenges.viewmodel
+package com.example.nyc_school_challenges.ui.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class SchoolViewModel @Inject constructor(val repository : SchoolsRepository) : ViewModel() {
+class SchoolViewModel @Inject constructor(private val repository : SchoolsRepository) : ViewModel() {
     private val mState =  MutableStateFlow<State>(State.Ready())
     private val mSearchResult = MutableStateFlow<List<SchoolModel>>(listOf())
     private val mCurrentSelection = MutableStateFlow(SchoolModel())

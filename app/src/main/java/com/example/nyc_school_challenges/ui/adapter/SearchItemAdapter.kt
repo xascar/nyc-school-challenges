@@ -3,13 +3,16 @@ package com.example.nyc_school_challenges.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nyc_school_challenges.ui.ScoreFragment
 import com.example.nyc_school_challenges.databinding.LayoutSearchItemBinding
 import com.example.nyc_school_challenges.domain.SchoolModel
-import com.example.nyc_school_challenges.viewmodel.SchoolViewModel
+import com.example.nyc_school_challenges.ui.home.SchoolViewModel
+import kotlinx.coroutines.selects.select
 
-class SearchItemAdapter(val activity: AppCompatActivity, val viewModel: SchoolViewModel,  var schools : List<SchoolModel>) : RecyclerView.Adapter<SearchItemAdapter.SearchItemViewHolder>() {
+class SearchItemAdapter(var schools : List<SchoolModel>,val select: (SchoolModel) -> Unit) : RecyclerView.Adapter<SearchItemAdapter.SearchItemViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchItemViewHolder {
         val binding = LayoutSearchItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SearchItemViewHolder(binding)
@@ -28,15 +31,13 @@ class SearchItemAdapter(val activity: AppCompatActivity, val viewModel: SchoolVi
         notifyDataSetChanged()
     }
 
-    inner class SearchItemViewHolder(val binding: LayoutSearchItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class SearchItemViewHolder(private val binding: LayoutSearchItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.tvSchoolName.text = schools[position].schoolName
             binding.tvSchoolAddress.text = schools[position].addressString
             binding.clTop.setOnClickListener{
                 //will launch a dialog fragment by our context
-                viewModel.select(schools[position])
-                ScoreFragment.newInstance().show(activity.supportFragmentManager, "SchoolDetailDialogFragment")
-
+                select(schools[position])
 
             }
         }
