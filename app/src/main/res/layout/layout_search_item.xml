@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
     <data/>
     <com.google.android.material.card.MaterialCardView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/empty"
+                tools:text="School name \n two lines \n three"
+                android:maxLines="2"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -36,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:textColor="@color/gray"
-                android:text="@string/empty"
+                tools:text="School Address"
+                android:maxLines="2"
                 android:textSize="14sp" />
 
         </LinearLayout>
