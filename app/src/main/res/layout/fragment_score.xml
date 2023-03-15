@@ -20,6 +20,21 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:src="@drawable/ic_baseline_arrow_back_24"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dividerThickness="1dp"/>
+
             <TextView
                 android:id="@+id/school_name"
                 android:layout_width="wrap_content"

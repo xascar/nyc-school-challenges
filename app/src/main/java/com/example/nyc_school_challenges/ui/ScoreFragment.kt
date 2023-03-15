@@ -10,6 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.nyc_school_challenges.databinding.FragmentScoreBinding
 import com.example.nyc_school_challenges.ui.home.SchoolViewModel
 
@@ -39,6 +40,9 @@ class ScoreFragment : DialogFragment() {
 
         lifecycleScope.launchWhenStarted {
             viewModel.lCurrentSelection.collect { currentSelection ->
+
+                binding.ibBack.setOnClickListener { dismiss() }
+
                 binding.schoolName.text = currentSelection.schoolName
                 binding.schoolAddress.text = currentSelection.addressString
                 binding.phone.text = currentSelection.phone
