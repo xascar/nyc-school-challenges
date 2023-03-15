@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.nyc_school_challenges'
+    namespace 'dev.xascar.nyc_school'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.nyc_school_challenges"
+        applicationId "dev.xascar.nyc_school"
         minSdk 21
         targetSdk 32
         versionCode 1

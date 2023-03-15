@@ -195,6 +195,14 @@
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/full_score" />
 
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/math_score"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:dividerColor="@color/gray"
+                        app:dividerThickness="1dp"/>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -215,6 +223,14 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/math_score"
                         tools:text="@string/full_score" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/critical_reading_score"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:dividerColor="@color/gray"
+                        app:dividerThickness="1dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -237,6 +253,13 @@
                         app:layout_constraintTop_toBottomOf="@id/critical_reading_score"
                         tools:text="@string/full_score" />
 
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/writing_score"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:dividerColor="@color/gray"
+                        app:dividerThickness="1dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"

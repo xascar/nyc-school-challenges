@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">20230118-OscarMoreno-NYCSchools</string>
+    <string name="app_name">NYCSchools</string>
     <string name="empty" />
     <string name="school_name">School Name</string>
     <string name="school_address">School Address</string>
@@ -13,7 +13,7 @@
     <string name="writing">Writing</string>
     <string name="num_task_taker">Task takers</string>
     <string name="sat_scores">SAT Scores</string>
-    <string name="nyc_school_challenges">20230118-OscarMoreno-NYCSchools</string>
+    <string name="nyc_school_challenges">NYCSchools</string>
     <string name="search">Search</string>
     <string name="close">Close</string>
     <string name="title_activity_main">MainActivity</string>
